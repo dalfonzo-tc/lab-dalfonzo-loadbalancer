@@ -1,12 +1,12 @@
 variable "lb_floating_ip" {
   description = "The (optional) floating ip to assign to the load balancer as a VIP"
-  type = string
-  default = false
+  type        = string
+  default     = false
 }
 
 variable "lb_name" {
   description = "Name of the loadbalancer"
-  type = string
+  type        = string
 }
 
 variable "listeners" {
@@ -16,5 +16,5 @@ variable "listeners" {
 
 variable "subnet_name" {
   description = "The name of the subnet (*NOT* the network name, although they can sometimes be the same)"
-  type    = string
+  type        = string
 }
