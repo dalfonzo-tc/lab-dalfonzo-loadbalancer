@@ -37,8 +37,8 @@ Using this module from within your project is similar to what the [example](./ex
 
 | Variable             |  Type  | Description                                  |
 |----------------------|:------:|----------------------------------------------|
-| keypair_name         | string | Name of keypair generated in Opensack        |
-| server_ips           |  list  | List of IPs of bastion host interfaces       |
+| loadbalancer_id         | string | ID of the created loadbalancer            |
+
 
 ## Listeners
 
