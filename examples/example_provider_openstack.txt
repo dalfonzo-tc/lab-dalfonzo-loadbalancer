@@ -1,0 +1,9 @@
+# Configure the OpenStack Provider
+# Fill in the values below, and rename this file to; openstack_provider.tf
+provider "openstack" {
+  application_credential_id     = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  application_credential_name   = "terraform"
+  application_credential_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  auth_url                      = "https://openstack01.mow.dev.tucows.cloud:5000/v3"
+  region                        = "RegionOne"
+}

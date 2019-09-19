@@ -1,0 +1,18 @@
+#  Local .terraform directories
+**/.terraform/*
+
+#ignore default location for sensitive output
+**/sec/*
+
+provider_openstack.tf
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+*.pem
+*.zip
+.DS_Store
+.idea
+.vscode
+.vault-token
