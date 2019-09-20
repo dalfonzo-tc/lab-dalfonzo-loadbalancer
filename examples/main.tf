@@ -1,6 +1,6 @@
 module "loadbalancer" {
-  #source = "../"
-  source = "git@github.com:tucowsinc/terraform-openstack-loadbalancer.git?ref=v0.1.2"
+  source = "../"
+  #source = "git@github.com:tucowsinc/terraform-openstack-loadbalancer.git?ref=v0.1.3"
   listeners = { "test01" = { "proto" = "HTTP"
     "port"            = "80"
     "lb_method"       = "ROUND_ROBIN"
