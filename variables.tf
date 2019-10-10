@@ -18,3 +18,20 @@ variable "subnet_name" {
   description = "The name of the subnet (*NOT* the network name, although they can sometimes be the same)"
   type        = string
 }
+
+variable "openstack_auth_url" {
+  type = string
+}
+
+variable "openstack_app_id" {
+  type = string
+}
+
+variable "openstack_app_secret" {
+  type = string
+}
+
+variable "openstack_region" {
+  type = string
+}
+
