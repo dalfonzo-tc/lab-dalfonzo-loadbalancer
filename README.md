@@ -6,6 +6,7 @@
 - [x] Creates as many listeners as desired
 - [x] Creates identical number of pools as listeners, in 1-to-1 relationship of name/proto/port
 - [X] Creates a health monitor per listener/pool 
+- [X] Creates an optional Senlin loadbalancer policy per listener/pool 
 
 * This module does **not** create pool members. This is left to the caller, another module, or perhaps something outside Terraform entirely. 
 ## How to use this module's example
@@ -15,9 +16,10 @@
   3. Inside the [examples](./examples/) directory add the following:
      * 'provider_openstack.tf' with your Openstack credentials (example_provider_openstack.txt provided as sample)
   4. Review [main.tf](./examples/main.tf) and adjust the variables if required.
-  5. Run `terraform init` to download any required modules to your local examples path
-  6. Run `terraform plan` to review what terraform intends to deploy
-  7. Run `terraform apply` to deploy the infrastructure contained within this module
+  5. Install python-openstackclient, python-senlinclient packages if Senlin policies creation is required
+  6. Run `terraform init` to download any required modules to your local examples path
+  7. Run `terraform plan` to review what terraform intends to deploy
+  8. Run `terraform apply` to deploy the infrastructure contained within this module
   
 ## Using this module in your project
 
@@ -32,6 +34,11 @@ Using this module from within your project is similar to what the [example](./ex
 | lb_name                | string |                 | Name of the created load balancer                                |
 | listeners              |  map   |                 | Map of listener/pool name to their details. See notes            |
 | subnet_name            | string |                 | Name of the subnet the LB will be attached to                    |
+| create_senlin_policy   |  bool  |       false     | Flag defining whether Senlin policy should be created            |
+| openstack_auth_url     | string |       ""        | Openstack API URL                                                |
+| openstack_region       | string |     RegionOne   | Openstack tenant region                                          |
+| openstack_app_id       | string |       ""        | Openstack application credential ID                              |
+| openstack_app_secret   | string |       ""        | Openstack application credential secret token                    |
  
 ## Output variables
 

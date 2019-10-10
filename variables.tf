@@ -22,19 +22,19 @@ variable "subnet_name" {
 variable "openstack_auth_url" {
   description = "Openstack API URL"
   type = string
-  default = "http://120.0.0.1:5000/v3"
+  default = ""
 }
 
 variable "openstack_app_id" {
   description = "Openstack application credential ID"
   type = string
-  default = "xxx"
+  default = ""
 }
 
 variable "openstack_app_secret" {
   description = "Openstack application credential secret token"
   type = string
-  default = "XxX"
+  default = ""
 }
 
 variable "openstack_region" {
