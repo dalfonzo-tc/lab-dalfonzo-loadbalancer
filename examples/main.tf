@@ -25,4 +25,9 @@ module "loadbalancer" {
   //lb_floating_ip = "10.151.201.215"
   subnet_name = "dev_cicd"
   lb_name     = "terraform01"
+  create_senlin_policy  = true
+  openstack_auth_url = "https://openstack01.mow.dev.tucows.cloud:5000/v3"
+  openstack_region  = "RegionOne"
+  openstack_app_id = "xxxxxxxxxxxxxxxxxxxx"
+  openstack_app_secret = "XXXXXXXXXXXXXXXXxxxxxxxxxxxxxxXXXXXXXXXXXXX"
 }
