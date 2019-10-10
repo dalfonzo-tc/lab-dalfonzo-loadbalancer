@@ -68,7 +68,7 @@ resource "local_file" "lb_policy" {
 
   provisioner "local-exec" {
     environment = local.os_cloud_env
-    command = "openstack cluster policy create --spec-file=${self[each.key].filename} ${each.key}_policy"
+    command = "openstack cluster policy create --spec-file=${self.filename} ${each.key}_policy"
   }
 
   provisioner "local-exec" {
