@@ -19,7 +19,7 @@ data "openstack_networking_subnet_v2" "subnet" {
 }
 
 resource "openstack_lb_loadbalancer_v2" "lb" {
-  name          = var.listeners
+  name          = var.lb_name
   vip_subnet_id = data.openstack_networking_subnet_v2.subnet.id
 }
 
