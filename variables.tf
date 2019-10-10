@@ -22,21 +22,25 @@ variable "subnet_name" {
 variable "openstack_auth_url" {
   description = "Openstack API URL"
   type = string
+  default = "http://120.0.0.1:5000/v3"
 }
 
 variable "openstack_app_id" {
   description = "Openstack application credential ID"
   type = string
+  default = "xxx"
 }
 
 variable "openstack_app_secret" {
   description = "Openstack application credential secret token"
   type = string
+  default = "XxX"
 }
 
 variable "openstack_region" {
   description = "Openstack tenant region"
   type = string
+  default = "RegionOne"
 }
 
 variable "create_senlin_policy" {
