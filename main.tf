@@ -58,7 +58,7 @@ resource "openstack_networking_floatingip_associate_v2" "fip" {
 
 resource "local_file" "lb_policy" {
   for_each    = var.listeners
-  content = templatefile("${path.module}/lb-policy.tpl", {
+  content = templatefile("${path.module}/templates/lb-policy.tpl", {
     loadbalancer_id = openstack_lb_loadbalancer_v2.lb.id,
     pool_id = openstack_lb_pool_v2.pool[each.key].id,
     pool_subnet = data.openstack_networking_subnet_v2.subnet.id,
