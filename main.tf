@@ -5,12 +5,12 @@ terraform {
 locals {
     os_cloud_env = { 
       OS_AUTH_TYPE = "v3applicationcredential"
-      OS_AUTH_URL = "${var.openstack_auth_url}"
+      OS_AUTH_URL = var.openstack_auth_url
       OS_IDENTITY_API_VERSION = "3" 
-      OS_REGION_NAME = "${var.openstack_region}"
+      OS_REGION_NAME = var.openstack_region
       OS_INTERFACE = "public"
-      OS_APPLICATION_CREDENTIAL_ID = "${var.openstack_app_id}"
-      OS_APPLICATION_CREDENTIAL_SECRET = "${var.openstack_app_secret}"
+      OS_APPLICATION_CREDENTIAL_ID = var.openstack_app_id
+      OS_APPLICATION_CREDENTIAL_SECRET = var.openstack_app_secret
     }   
 }
 

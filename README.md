@@ -44,7 +44,9 @@ Using this module from within your project is similar to what the [example](./ex
 
 | Variable             |  Type  | Description                                  |
 |----------------------|:------:|----------------------------------------------|
-| loadbalancer_id         | string | ID of the created loadbalancer            |
+| loadbalancer_id      | string | ID of the created loadbalancer               |
+| vip_address          | string | IP assingned to the loadbalancer             |
+| pools                |   map  | Name->ID map of pools created                |
 
 
 ## Listeners

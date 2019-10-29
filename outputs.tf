@@ -7,3 +7,8 @@ output "vip_address" {
   value = openstack_lb_loadbalancer_v2.lb.vip_address
   description = "The VIP Address of the load balancer"
 }
+
+output "pools" {
+  value = zipmap(openstack_lb_pool_v2.pool[*].name, openstack_lb_pool_v2.pool[*].id)
+  description = "MAP of pool name's to id's"
+}
