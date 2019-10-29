@@ -9,6 +9,10 @@ output "vip_address" {
 }
 
 output "pools" {
-  value = zipmap(openstack_lb_pool_v2.pool[*].name, openstack_lb_pool_v2.pool[*].id)
-  description = "MAP of pool name's to id's"
+  value = [
+    for name, v in openstack_lb_pool_v2.pool:
+      map(name, openstack_lb_pool_v2.pool[name].id)
+  ]
+  description = "map of pool names to id's, consumable by other modules to add members to pools"
 }
+
