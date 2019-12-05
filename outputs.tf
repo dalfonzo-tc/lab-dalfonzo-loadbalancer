@@ -8,11 +8,15 @@ output "vip_address" {
   description = "The VIP Address of the load balancer"
 }
 
-output "pools" {
-  value = [
-    for name, v in openstack_lb_pool_v2.pool:
-      map(name, openstack_lb_pool_v2.pool[name].id)
-  ]
-  description = "map of pool names to id's, consumable by other modules to add members to pools"
+output "pools_raw" {
+  value = openstack_lb_pool_v2.pool
+  description = "Raw pool details of all pools created"
 }
 
+output "pools" {
+  value = {
+    for pool in openstack_lb_pool_v2.pool:
+        pool.name => pool.id
+  }
+  description = "map of pool names to id's, consumable by other modules to add members to pools"
+}
