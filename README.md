@@ -9,6 +9,9 @@
 - [X] Creates an optional Senlin loadbalancer policy per listener/pool 
 
 * This module does **not** create pool members. This is left to the caller, another module, or perhaps something outside Terraform entirely. 
+
+* You must specify `use_octavia = true` in your projects provider_openstack.tf configuration. 
+
 ## How to use this module's example
 
   1. You must be able to clone this modules repository as the user running terraform. Setup appropriate git credentials or ssh keys ahead of time.
@@ -31,6 +34,8 @@ Using this module from within your project is similar to what the [example](./ex
 | Variable               |  Type  |  Default        | Description                                                      |
 |------------------------|:------:|:---------------:|------------------------------------------------------------------|
 | lb_floating_ip         | string |       false     | A floating IP to attach to the LB. Leave false for no floating ip|
+| lb_flavors             |   map  |map of name<>id  | See variables.tf for details of mapping to small,medium,large    |
+| lb_flavor_name         | string |     small       | Flavor of LB to use. One of: small, medium, large                |
 | lb_name                | string |                 | Name of the created load balancer                                |
 | listeners              |  map   |                 | Map of listener/pool name to their details. See notes            |
 | subnet_name            | string |                 | Name of the subnet the LB will be attached to                    |
@@ -39,7 +44,7 @@ Using this module from within your project is similar to what the [example](./ex
 | openstack_region       | string |     RegionOne   | Openstack tenant region                                          |
 | openstack_app_id       | string |       ""        | Openstack application credential ID                              |
 | openstack_app_secret   | string |       ""        | Openstack application credential secret token                    |
- 
+
 ## Output variables
 
 | Variable             |  Type  | Description                                  |

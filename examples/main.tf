@@ -2,7 +2,7 @@ module "loadbalancer" {
   source = "../"
   #source = "git@github.com:tucowsinc/terraform-openstack-loadbalancer.git?ref=v0.1.3"
   listeners = {
-    "consul" = {
+    "consul-test" = {
       "proto"           = "TCP"
       "port"            = "8501"
       "lb_method"       = "ROUND_ROBIN"
@@ -12,7 +12,7 @@ module "loadbalancer" {
       "mon_admin_state" = "true"
       "mon_timeout"     = "3"
     }
-    "vault" = {
+    "vault-test" = {
       "proto"           = "HTTPS"
       "port"            = "8200"
       "lb_method"       = "ROUND_ROBIN"
@@ -27,4 +27,5 @@ module "loadbalancer" {
   subnet_name = "lab_k8s_teeuwes"
   lb_name     = "terraform01"
   create_senlin_policy  = false
+  lb_flavor_name = "small"
 }

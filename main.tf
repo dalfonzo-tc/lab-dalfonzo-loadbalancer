@@ -21,6 +21,9 @@ data "openstack_networking_subnet_v2" "subnet" {
 resource "openstack_lb_loadbalancer_v2" "lb" {
   name          = var.lb_name
   vip_subnet_id = data.openstack_networking_subnet_v2.subnet.id
+  loadbalancer_provider = "amphora"
+  flavor_id = var.lb_flavors[var.lb_flavor_name]
+  //flavor_id = "708d9866-c946-4c45-aaaa-a31fa432c5a0"
 }
 
 resource "openstack_lb_listener_v2" "listener" {
