@@ -72,14 +72,14 @@ resource "local_file" "lb_policy" {
   provisioner "local-exec" {
     environment = local.os_cloud_env
     command = "openstack cluster policy create --spec-file=${self.filename} ${var.lb_name}_${each.key}_policy"
-    on_failure = "continue"
+    on_failure = continue
   }
 
   provisioner "local-exec" {
-    when = "destroy"
+    when = destroy
     environment = local.os_cloud_env
     command = "openstack cluster policy delete ${var.lb_name}_${each.key}_policy"
-    on_failure = "continue"
+    on_failure = continue
   }
 }
 
