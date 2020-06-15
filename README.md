@@ -6,7 +6,6 @@
 - [x] Creates as many listeners as desired
 - [x] Creates identical number of pools as listeners, in 1-to-1 relationship of name/proto/port
 - [X] Creates a health monitor per listener/pool 
-- [X] Creates an optional Senlin loadbalancer policy per listener/pool 
 
 * This module does **not** create pool members. This is left to the caller, another module, or perhaps something outside Terraform entirely. 
 
